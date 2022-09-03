@@ -57,8 +57,4 @@ jobs:
     needs: [build-app, build-db]
     runs-on: macos-latest
     steps: 
-<<<<<<< HEAD
       - run: echo "Hello MacOS"
-=======
-      - run: echo "Hello MacOS"
->>>>>>> a6ba8620271f6325d355d55557b8fb62fc365d44
