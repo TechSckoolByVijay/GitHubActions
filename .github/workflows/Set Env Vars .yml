@@ -3,7 +3,7 @@ name: 'custom GITHUB_ENV var Demo'
 on:  workflow_dispatch
 
 jobs:
-  custom GITHUB_ENV var Demo:
+  custom_GITHUB_ENV:
     runs-on: ubuntu-latest 
     steps:
     - name: Set the value
