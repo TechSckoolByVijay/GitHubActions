@@ -15,5 +15,3 @@ jobs:
       id: step_two
       run: |
         echo "${{ env.action_state }}" # This will output 'yellow'
-		
-		
