@@ -6,6 +6,7 @@ on:
 env:
   DAY_OF_WEEK: Funday
   testvar: value-1
+  
 
 jobs: 
   mainjob:

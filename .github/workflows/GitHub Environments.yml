@@ -10,9 +10,6 @@ jobs:
       name: production
       url: https://github.com
     steps:
-      - name: deploy
-        run: echo "Depoloying to production envt"
-      
-      - run: |
-            echo "sec1: ${{ secrets.AZURE_CREDENTIALS  }}"
-            echo "sec2: ${{ secrets.cder  }}"
+      - name: 'Print secret from environment'
+        run: |
+            echo "AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS  }}"
