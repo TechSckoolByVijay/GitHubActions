@@ -1,0 +1,18 @@
+name: GitHub Environments
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: https://github.com
+    steps:
+      - name: deploy
+        run: echo "Depoloying to production envt"
+      
+      - run: |
+            echo "sec1: ${{ secrets.AZURE_CREDENTIALS  }}"
+            echo "sec2: ${{ secrets.cder  }}
