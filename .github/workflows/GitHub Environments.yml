@@ -6,10 +6,12 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
+
     environment: 
       name: production
       url: https://github.com
+      
     steps:
       - name: 'Print secret from environment'
         run: |
-            echo "AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS  }}"
+            echo "APP_SECRET: ${{ secrets.APP_SECRET  }}"
