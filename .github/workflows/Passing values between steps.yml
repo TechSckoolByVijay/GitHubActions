@@ -21,6 +21,7 @@ jobs:
 
     - name: Get-Variable-Value
       run: |
+        echo "Printing the values"
         echo variableName: ${{ env.variableName }} 
         echo var1_name: ${{ steps.var_source_step.outputs.var1_name }} 
         echo var2_date: ${{ steps.var_source_step.outputs.var2_date }}
