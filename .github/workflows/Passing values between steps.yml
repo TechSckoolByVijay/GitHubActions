@@ -1,0 +1,17 @@
+name: Passing Variable Values to another step
+
+on:  workflow_dispatch
+
+jobs:
+  passing-values-bw-steps:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create-Variables
+      id: var_source_step
+      run: |
+       echo "::set-output name=var1_name::TechSckool"
+       echo "::set-output name=var2_date::$(date +'%Y-%m-%d-%H-%M')"
+    
+    - name: Get-Variable-Value
+      run: |
+       echo ${{ steps.var_source_step.outputs.var1_name }} ${{ steps.var_source_step.outputs.var2_date }}
