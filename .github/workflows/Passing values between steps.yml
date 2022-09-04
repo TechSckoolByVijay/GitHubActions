@@ -1,4 +1,4 @@
-name: Passing Variable Values to another step
+name: Passing Values to Next Steps
 
 on:  workflow_dispatch
 
@@ -14,4 +14,5 @@ jobs:
     
     - name: Get-Variable-Value
       run: |
-       echo ${{ steps.var_source_step.outputs.var1_name }} ${{ steps.var_source_step.outputs.var2_date }}
+       echo ${{ steps.var_source_step.outputs.var1_name }} 
+       echo ${{ steps.var_source_step.outputs.var2_date }}
