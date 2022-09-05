@@ -2,14 +2,17 @@ name: GitHub Environments
 
 on:
   workflow_dispatch:
-    
+
+environment: 
+  name: production
+  url: https://github.com
+
 jobs:
   deployment:
+    
     runs-on: ubuntu-latest
 
-    environment: 
-      name: production
-      url: https://github.com
+
       
     steps:
       - name: 'Print secret from environment'
