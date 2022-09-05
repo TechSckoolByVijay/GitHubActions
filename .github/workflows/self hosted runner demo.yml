@@ -1,6 +1,6 @@
-# This is a simple workflow 
+# This is a workflow to demonstarte self hosted runner job processing
 
-name: 'GitHub Workflow Demo'
+name: 'self hosted runner demo'
 
 on: workflow_dispatch
 
@@ -10,3 +10,5 @@ jobs:
     steps: 
     - name: runscript-to-say-hello
       run:  echo "Howdy GitHub Actions"
+    - name: sleep for 100 seconds
+      run: sleep 100
