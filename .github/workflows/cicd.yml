@@ -47,7 +47,7 @@ jobs:
         with:
           name: .net-app
 
-      - uses: azure/login@v1
+      # - uses: azure/login@v1
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -55,5 +55,6 @@ jobs:
         with:
           app-name: 'abc-vijay'
           slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
           package: .
   
