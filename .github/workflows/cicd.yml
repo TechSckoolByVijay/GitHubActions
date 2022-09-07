@@ -53,8 +53,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'abc-vijay'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          app-name: 'techsckoolvijay'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
           package: .
   
