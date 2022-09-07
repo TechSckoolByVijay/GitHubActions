@@ -30,7 +30,6 @@ env:
   AZURE_WEBAPP_NAME: dockerappvijay  # set this to the name of your Azure Web App
 
 on:
-  push:
   workflow_dispatch:
 
 permissions:
