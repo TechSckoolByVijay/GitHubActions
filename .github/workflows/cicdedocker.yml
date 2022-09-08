@@ -59,8 +59,7 @@ jobs:
         with:
           push: true
           tags: labtestvijaytech.azurecr.io/${{ env.REPO }}:${{ github.sha }}
-          file: ./Dockerfile
-        working-directory: ./WebApplication
+          file: ./WebApplication/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
