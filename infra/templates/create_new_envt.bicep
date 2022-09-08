@@ -90,7 +90,7 @@ resource name_resource 'Microsoft.Web/sites@2018-11-01' = {
           value: 'false'
         }
       ]
-      linuxFxVersion: 'DOCKER|${container_registery.name}.azurecr.io:myimage:latest'
+      linuxFxVersion: 'DOCKER|${container_registery.name}.azurecr.io/azure-vote-front:v1'
       alwaysOn: true
       ftpsState: 'FtpsOnly'
     }
