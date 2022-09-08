@@ -69,31 +69,6 @@ resource name_resource 'Microsoft.Web/sites@2018-11-01' = {
   location: location
   tags: null
   properties: {         
-    //serverFarmId: '/subscriptions/${subscriptionId}/resourcegroups/${serverFarmResourceGroup}/providers/Microsoft.Web/serverfarms/${hostingPlanName}'
-    // serverFarmId: '/subscriptions/db8fcd00-4f68-42c3-8b19-947bf4d7b2c5/resourceGroups/lab/providers/Microsoft.Web/serverFarms/ASP-lab-94dc-vijaytest'
-    siteConfig: {
-      appSettings: [
-        {
-          name: 'DOCKER_REGISTRY_SERVER_URL'
-          value: '${container_registery.name}.azurecr.io'
-        }
-        {
-          name: 'DOCKER_REGISTRY_SERVER_USERNAME'
-          value: container_registery.name
-        }
-        {
-          name: 'DOCKER_REGISTRY_SERVER_PASSWORD'
-          value: ''
-        }
-        {
-          name: 'WEBSITES_ENABLE_APP_SERVICE_STORAGE'
-          value: 'false'
-        }
-      ]
-      linuxFxVersion: 'DOCKER|${container_registery.name}.azurecr.io/azure-vote-front:v1'
-      alwaysOn: true
-      ftpsState: 'FtpsOnly'
-    }
     serverFarmId: serverfarms_ASP_lab_94dc_name_resource.id
     clientAffinityEnabled: false
     httpsOnly: true
