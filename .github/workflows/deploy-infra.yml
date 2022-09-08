@@ -23,6 +23,10 @@ jobs:
           resourceGroupName: labtest
           template: ./infra/templates/create_new_envt.bicep
           # parameters: storageAccountType=Standard_LRS
- 
-        # output containerName variable from template
-      - run: echo ${{ steps.deploy.outputs.containerName }}
+      
+       - run: |
+          az deployment group create \
+            --name demoRGDeployment \
+            --resource-group labtest \
+            --template-file ./infra/templates/create_new_envt.bicep \
+           
