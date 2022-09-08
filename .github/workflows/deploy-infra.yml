@@ -15,12 +15,12 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-        # Deploy ARM template
-      - name: Run ARM deploy
+        # Deploy ARM/Bicep template
+      - name: Run ARM/Bicep deploy
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: labtest
+          resourceGroupName: testing
           template: ./infra/templates/create_new_envt.bicep
           # parameters: storageAccountType=Standard_LRS
 
