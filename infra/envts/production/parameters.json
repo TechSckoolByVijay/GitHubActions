@@ -3,10 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "app_name": {
-            "value": "techsckoolvijaysaini"
+            "value": "techsckoolvijay"
         },
         "acr_name": {
-            "value": "techsckoolsainiacr"
+            "value": "techsckoolacr"
+        },
+        "storageNamePrefix": {
+            "value": "techsckool"
         }
     }
 }
