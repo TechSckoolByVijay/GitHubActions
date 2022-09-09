@@ -4,6 +4,9 @@ name: Deploy Infra
 on:
   workflow_dispatch:
 
+env:
+  ASB_NAME: techsckoolvijayasb
+
 jobs:
   deployment:
     runs-on: ubuntu-latest
@@ -22,6 +25,17 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: testing
           template: ./infra/templates/create_new_envt.bicep
-          # parameters: storageAccountType=Standard_LRS
+          parameters: ./infra/envts/production/parameters.json asb_name=${{ env.ASB_NAME }}
+
+
+
+      #   # Deploy ARM/Bicep template
+      # - name: Run ARM/Bicep deploy
+      #   uses: azure/arm-deploy@v1
+      #   with:
+      #     subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+      #     resourceGroupName: testing
+      #     template: ./infra/templates/create_new_envt.bicep
+      #     # parameters: storageAccountType=Standard_LRS
 
 

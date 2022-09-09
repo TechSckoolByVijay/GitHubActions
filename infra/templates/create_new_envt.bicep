@@ -1,21 +1,25 @@
 
 param location string = resourceGroup().location
 
+param app_name string = 'techsckoolvijay'
+param asp_name string = 'ASP-${app_name}'
+param acr_name string = 'vijaytechsckoolacr'
+param asb_name string = 'vijaytechsckoolasb'
 
-resource storageAccounts 'Microsoft.Storage/storageAccounts@2021-09-01' = {
-  name: 'vijaytechsckool321'
-  location: location
-  sku: {
-    name: 'Standard_LRS'
-  }
-  kind: 'BlobStorage'
-  properties: {
-    accessTier: 'Cool'
-  }
-  tags: {
-    key: 'value'
-  }
-}
+// resource storageAccounts 'Microsoft.Storage/storageAccounts@2021-09-01' = {
+//   name: 'vijaytechsckool321'
+//   location: location
+//   sku: {
+//     name: 'Standard_LRS'
+//   }
+//   kind: 'BlobStorage'
+//   properties: {
+//     accessTier: 'Cool'
+//   }
+//   tags: {
+//     key: 'value'
+//   }
+// }
 
 
 
@@ -31,8 +35,17 @@ resource storageAccounts 'Microsoft.Storage/storageAccounts@2021-09-01' = {
 // }
 
 
+resource container_registery 'Microsoft.ContainerRegistry/registries@2022-02-01-preview' = {
+  name: acr_name
+  location: location
+  sku: {
+    name: 'Basic'
+  }
+  properties: {
+    adminUserEnabled: true
+  }
+}
 
-param asp_name string = 'ASP-lab-94dc-techsckool'
 
 resource serverfarms_ASP_lab_94dc_name_resource 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: asp_name
@@ -47,12 +60,8 @@ resource serverfarms_ASP_lab_94dc_name_resource 'Microsoft.Web/serverfarms@2022-
   kind: 'linux'
 }
 
-
-
-param name string = 'techsckoolvijay'
-
 resource name_resource 'Microsoft.Web/sites@2018-11-01' = {
-  name: name
+  name: app_name
   location: location
   tags: null
   properties: {         
@@ -63,4 +72,11 @@ resource name_resource 'Microsoft.Web/sites@2018-11-01' = {
     httpsOnly: true
   }
   dependsOn: []
+}
+
+
+
+resource asb 'Microsoft.ServiceBus/namespaces@2022-01-01-preview' = {
+  name: asb_name
+  location: location
 }
