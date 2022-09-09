@@ -24,7 +24,7 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: testing
-          template: ./infra/templates/create_new_envt.bicep
+          template: ./infra/templates/deploy_envt.bicep
           parameters: ./infra/envts/production/parameters.json asb_name=${{ env.ASB_NAME }}
 
  
