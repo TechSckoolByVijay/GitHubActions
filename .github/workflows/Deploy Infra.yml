@@ -22,7 +22,7 @@ jobs:
       - name: Run ARM/Bicep deploy
         uses: azure/arm-deploy@v1
         with:
-          resourceGroupName: testing
+          resourceGroupName: lab
           template: ./infra/templates/deploy_envt.bicep
           parameters: storageNamePrefix=wswdiii
           #parameters: ./infra/envts/production/parameters.json asb_name=${{ env.ASB_NAME }}
