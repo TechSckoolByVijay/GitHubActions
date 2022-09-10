@@ -22,20 +22,9 @@ jobs:
       - name: Run ARM/Bicep deploy
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: testing
           template: ./infra/templates/deploy_envt.bicep
-          parameters: ./infra/envts/production/parameters.json asb_name=${{ env.ASB_NAME }}
+          parameters: storageNamePrefix=wswdiii
+          #parameters: ./infra/envts/production/parameters.json asb_name=${{ env.ASB_NAME }}
 
  
-
-      #   # Deploy ARM/Bicep template
-      # - name: Run ARM/Bicep deploy
-      #   uses: azure/arm-deploy@v1
-      #   with:
-      #     subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-      #     resourceGroupName: testing
-      #     template: ./infra/templates/create_new_envt.bicep
-      #     # parameters: storageAccountType=Standard_LRS
-
-
