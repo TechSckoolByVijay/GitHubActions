@@ -1,30 +1,31 @@
-
 name: Deploy Infra
 
 on:
   workflow_dispatch:
 
 env:
-  ASB_NAME: techsckoolvijayasb
+  resourceGroupName: lab
+  storageNamePrefix: labtest
+  
 
 jobs:
-  deployment:
+  infra-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2.4.2
 
-      # Log into Azure
-      - uses: azure/login@v1
+      # Login into Azure
+      - name: Azure Login
+        uses: Azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds:  ${{ secrets.AZURE_CREDENTIALS }}
 
-        # Deploy ARM/Bicep template
-      - name: Run ARM/Bicep deploy
-        uses: azure/arm-deploy@v1
+      # Deploy Bicep template
+      - name: Deploy Azure Resource Manager (ARM) Template
+        uses: Azure/arm-deploy@v1
         with:
-          resourceGroupName: lab
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION  }}
+          resourceGroupName: ${{ env.resourceGroupName }}
           template: ./infra/templates/deploy_envt.bicep
-          parameters: storageNamePrefix=wswdiii
-          #parameters: ./infra/envts/production/parameters.json asb_name=${{ env.ASB_NAME }}
-
- 
+          parameters: ./infra/envts/production/deploy_envt.parameters.json storageNamePrefix=${{ env.storageNamePrefix }} 
