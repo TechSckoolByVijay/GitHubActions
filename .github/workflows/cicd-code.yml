@@ -30,7 +30,7 @@ env:
 #   workflow_dispatch:
 
 on:
-  workflow_dispatch:
+  push:
 
 permissions:
   contents: read
@@ -43,8 +43,6 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      wo
     steps:
       - uses: actions/checkout@v3
 
