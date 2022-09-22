@@ -53,7 +53,6 @@ resource asp 'Microsoft.Web/serverfarms@2022-03-01' = {
 resource webapp 'Microsoft.Web/sites@2018-11-01' = {
   name: app_name
   location: location
-  tags: null
   properties: {         
     serverFarmId: asp.id
     clientAffinityEnabled: false
