@@ -38,7 +38,7 @@ permissions:
 defaults:
   run:
     shell: bash
-    working-directory: ./my-dotnet-webapp
+    working-directory: ./my-dotnet-webapp1
 
 jobs:
   build:
