@@ -2,11 +2,11 @@ name: continuous Integration Demo
 
 on:
   push:
+    branches: [ "main" ]
   workflow_dispatch:
 
-
-permissions:
-  contents: read
+env:
+   DOTNET_VERSION: '6.0.x'                 # set this to the .NET Core version to use
 
 defaults:
   run:
