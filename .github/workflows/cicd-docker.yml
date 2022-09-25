@@ -29,9 +29,7 @@ name: Build and deploy a container to an Azure Web App
 env:
   AZURE_WEBAPP_NAME: xexe32cex  # set this to the name of your Azure Web App
 
-on:
-  push:
-    
+on:   
   workflow_dispatch:
 
 
