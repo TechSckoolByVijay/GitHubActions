@@ -1,4 +1,4 @@
-name: continuous Integration Demo
+name: Continuous Integration Demo
 
 on:
   push:
@@ -6,16 +6,16 @@ on:
   workflow_dispatch:
 
 env:
-   DOTNET_VERSION: '6.0.x'                 # set this to the .NET Core version to use
+   DOTNET_VERSION: '6.0.x'      # set this to the .NET Core version to use
 
 defaults:
   run:
     shell: bash
-    working-directory: ./webapp-code
+    working-directory: ./WebApplication01
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
     steps:
       - uses: actions/checkout@v3
 
@@ -23,7 +23,10 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-
+      
+      - name: Install dependencies
+        run: dotnet restore
+      
       - name: Build with dotnet
         run: dotnet build --configuration Release
         
