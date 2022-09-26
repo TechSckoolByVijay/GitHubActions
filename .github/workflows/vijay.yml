@@ -13,7 +13,7 @@ on:
         type: string
   
 env:
-  test: Vijay
+  TEST: Vijay
 
 jobs:
   prod-check:
@@ -27,5 +27,5 @@ jobs:
       run: echo "I am executed"
 
     - name: step-name2
-      if: ${{ env.test2 }} 
+      if: ${{ env.test }} 
       run: echo "I am executed"
