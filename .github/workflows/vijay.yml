@@ -10,7 +10,6 @@ on:
     inputs:
       tags:
         description: 'Test scenario tags'
-        required: true 
         type: string
   
 env:
