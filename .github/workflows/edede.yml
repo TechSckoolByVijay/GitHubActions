@@ -12,4 +12,4 @@ jobs:
     - run: |
           gh api -H 'Accept: application/vnd.github+json' /repos/TechSckoolByVijay/GitHubActions/actions/runners/registration-token
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: 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
