@@ -32,6 +32,12 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./WebApplication01
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
