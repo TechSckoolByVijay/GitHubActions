@@ -27,5 +27,5 @@ jobs:
       run: echo "I am executed"
 
     - name: step-name2
-      if: ${{ env.test }} 
+      if: ${{ env.test2 }} 
       run: echo "I am executed"
