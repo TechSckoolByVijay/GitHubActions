@@ -54,7 +54,7 @@ jobs:
         run: | 
           echo ${GITHUB_REPOSITORY,,}
           echo ${{ github.sha }}
-          echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+          echo "REPO=thebestapp" >>${GITHUB_ENV}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v2
