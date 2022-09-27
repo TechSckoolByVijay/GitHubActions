@@ -30,7 +30,7 @@ env:
   AZURE_WEBAPP_NAME: dockerewdce  # set this to the name of your Azure Web App
 
 on:   
-  workflow_dispatch:
+  push:
 
 
 jobs:
