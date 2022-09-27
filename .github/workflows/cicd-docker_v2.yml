@@ -87,4 +87,4 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          images: 'vijaysainiacr123.azurecr.io/${{ env.REPO }}:${{ github.sha }}'
+          images: 'tecsckool.azurecr.io/${{ env.REPO }}:${{ github.sha }}'
