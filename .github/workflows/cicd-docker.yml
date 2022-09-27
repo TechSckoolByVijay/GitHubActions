@@ -32,10 +32,6 @@ env:
 on:   
   push:
 
-defaults:
-  run:
-    shell: bash
-    working-directory: ./WebApplication02
 
 jobs:
   build:
@@ -62,7 +58,7 @@ jobs:
         with:
           push: true
           tags: vijaysainiacr123.azurecr.io/${{ env.REPO }}:${{ github.sha }}
-          file: ./WebApplication02/Dockerfile
+          file: ./WebApplication/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
