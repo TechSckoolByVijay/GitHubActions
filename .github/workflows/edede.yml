@@ -1,0 +1,15 @@
+name:  testing
+
+on:
+  push:
+   
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+    # Checkout code
+    - run: |
+          gh api -H 'Accept: application/vnd.github+json' /repos/TechSckoolByVijay/GitHubActions/actions/runners/registration-token
+      env:
+        GH_TOKEN: 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
