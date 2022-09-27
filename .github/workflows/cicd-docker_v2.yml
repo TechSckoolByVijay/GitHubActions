@@ -74,7 +74,7 @@ jobs:
 
     steps:
       - name: Lowercase the repo name and username
-        run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+        run: echo "REPO=thebestapp" >>${GITHUB_ENV}
 
       # Login into Azure
       - name: Azure Login
