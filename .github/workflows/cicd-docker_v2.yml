@@ -54,7 +54,7 @@ jobs:
         run: | 
           echo ${GITHUB_REPOSITORY,,}
           echo ${{ github.sha }}
-          echo "REPO=thebestapp" >>${GITHUB_ENV}
+          echo "REPO=Thebestapp" >>${GITHUB_ENV}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v2
@@ -74,7 +74,7 @@ jobs:
 
     steps:
       - name: Lowercase the repo name and username
-        run: echo "REPO=thebestapp" >>${GITHUB_ENV}
+        run: echo "REPO=Thebestapp" >>${GITHUB_ENV}
 
       # Login into Azure
       - name: Azure Login
