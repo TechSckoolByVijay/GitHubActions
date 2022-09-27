@@ -19,6 +19,11 @@
 
 name: Techsckool-CICD
 
+# on:
+#   push:
+#     branches: [ "main" ]
+#   workflow_dispatch:
+
 env:
   AZURE_WEBAPP_NAME: dev-techsckool    # set this to the name of your Azure Web App
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
@@ -30,10 +35,6 @@ defaults:
     shell: bash
     working-directory: ./WebApplication01
 
-on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -118,3 +119,4 @@ jobs:
           app-name: prod-techsckool
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+w
