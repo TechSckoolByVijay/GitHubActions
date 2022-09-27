@@ -30,11 +30,16 @@ env:
   AZURE_WEBAPP_NAME: dockerappvijay  # set this to the name of your Azure Web App
 
 on:
-  workflow_dispatch:
+  push:
 
 permissions:
   contents: read
   packages: write
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./WebApplication
 
 jobs:
   build:
