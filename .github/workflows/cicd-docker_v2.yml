@@ -46,9 +46,9 @@ jobs:
       - name: Log in to GitHub container registry  
         uses: docker/login-action@v1.10.0
         with:
-          registry: tecsckool.azurecr.io
-          username: tecsckool
-          password: nyTfC4tW2W=XGTiQNzwRbX7CIpOwJ2hW
+          registry: fcercerce.azurecr.io
+          username: fcercerce
+          password: ltzRDf4v7=yWSt9mGtwPkkYsnFnMcX=j
           
       - name: Lowercase the repo name and username
         run: | 
@@ -60,8 +60,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: tecsckool.azurecr.io/${{ env.REPO }}:${{ github.sha }}
-          file: ./WebApplication02/Dockerfile
+          tags: fcercerce.azurecr.io/${{ env.REPO }}:${{ github.sha }}
+          file: ./WebApplication03/Dockerfile
 
 
 
