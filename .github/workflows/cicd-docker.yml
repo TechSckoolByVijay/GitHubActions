@@ -27,7 +27,7 @@
 name: Build and deploy a container to an Azure Web App
 
 env:
-  AZURE_WEBAPP_NAME: xexe32cex  # set this to the name of your Azure Web App
+  AZURE_WEBAPP_NAME: dockerewdce  # set this to the name of your Azure Web App
 
 on:   
   workflow_dispatch:
@@ -58,13 +58,13 @@ jobs:
         with:
           push: true
           tags: vijaysainiacr123.azurecr.io/${{ env.REPO }}:${{ github.sha }}
-          file: ./WebApplication/Dockerfile
+          file: ./WebApplication02/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: 'uat'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
