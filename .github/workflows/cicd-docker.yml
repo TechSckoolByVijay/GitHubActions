@@ -32,6 +32,10 @@ env:
 on:   
   push:
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./WebApplication02
 
 jobs:
   build:
