@@ -4,19 +4,19 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
- 
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["WebApplication03/WebApplication03.csproj", "WebApplication03/"]
-RUN dotnet restore "WebApplication03/WebApplication03.csproj"
+COPY ["WebApplication02.csproj", "."]
+RUN dotnet restore "./WebApplication02.csproj"
 COPY . .
-WORKDIR "/src/WebApplication03"
-RUN dotnet build "WebApplication03.csproj" -c Release -o /app/build
+WORKDIR "/src/."
+RUN dotnet build "WebApplication02.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebApplication03.csproj" -c Release -o /app/publish
+RUN dotnet publish "WebApplication02.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebApplication03.dll"]
+ENTRYPOINT ["dotnet", "WebApplication02.dll"]

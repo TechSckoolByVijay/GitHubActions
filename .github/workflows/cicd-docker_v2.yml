@@ -32,6 +32,10 @@ env:
 on:   
   push:
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./WebApplication02
 
 jobs:
   build:
@@ -46,9 +50,9 @@ jobs:
       - name: Log in to GitHub container registry  
         uses: docker/login-action@v1.10.0
         with:
-          registry: fcercerce.azurecr.io
-          username: fcercerce
-          password: ltzRDf4v7=yWSt9mGtwPkkYsnFnMcX=j
+          registry: demo010.azurecr.io
+          username: demo010
+          password: sHidiT36xMp7b+T2No6TBOC6j7wZKlm3
           
       - name: Lowercase the repo name and username
         run: | 
@@ -60,8 +64,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: fcercerce.azurecr.io/${{ env.REPO }}:${{ github.sha }}
-          file: ./WebApplication03/Dockerfile
+          tags: demo010.azurecr.io/${{ env.REPO }}:${{ github.sha }}
+          file: ./WebApplication02/Dockerfile
 
 
 
