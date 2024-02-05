@@ -13,3 +13,4 @@ jobs:
       - name: Access Environment Variable
         run: |
           echo "My Environment Variable: ${{ env.MY_VARIABLE }}"
+          echo "My Environment Variable: $MY_VARIABLE"
