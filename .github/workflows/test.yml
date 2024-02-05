@@ -7,7 +7,7 @@ on:
 jobs:
   example_job:
     runs-on: ubuntu-latest
-    environment: production
+    environment: uat
     steps:
       - name: Access Environment Variable
         run: |
@@ -15,3 +15,6 @@ jobs:
           echo "My Environment Variable: ${{secrets.TEST}}"
           echo "My Environment Variable: ${{env.TEST}}"
           printenv
+        env:
+           TEST: ${{ secrets.TEST }}
+           SEC: ${{ secrets.SEC }}
