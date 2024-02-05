@@ -1,3 +1,4 @@
+
 name: Environment Variables Example
 
 on:
@@ -12,5 +13,6 @@ jobs:
     steps:
       - name: Access Environment Variable
         run: |
+          printenv
           echo "My Environment Variable: ${{ env.MY_VARIABLE }}"
           echo "My Environment Variable: $MY_VARIABLE"
