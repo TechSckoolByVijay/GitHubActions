@@ -14,7 +14,6 @@ jobs:
       - name: Access Environment Variable
         run: |
           printenv
-          echo "AZURE_WEBAPP_PUBLISH_PROFILE_DOCKER: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_DOCKER  }}"
-          echo "AZURE_WEBAPP_PUdedeR: ${{ secrets.AZURE_WEBAPP_PUBLIddeR  }}"
-          echo "My Environment Variable: $MY_VARIABLE"
-          echo "My Environment Variable: ${{ secrets.MY_VARIABLE }}"
+          echo "AZURE_WEBAPP_PUBLISH_PROFILE_DOCKER: ${{ secrets.SEC  }}"
+          echo "My Environment Variable: ${{ secrets.TEST }}"
+          echo "My Environment Variable: ${{ env.TEST }}"
