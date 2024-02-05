@@ -16,6 +16,3 @@ jobs:
           echo "My Environment Variable: ${{env.TEST}}"
           echo "My Environment Variable: ${{vars.MY_VARIABLE}}"
           printenv
-        env:
-           TEST: ${{ vars.TEST }}
-           SEC: ${{ secrets.SEC }}
